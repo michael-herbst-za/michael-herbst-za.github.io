@@ -6,7 +6,7 @@ A clean, single-page HTML curriculum vitae hosted on GitHub Pages.
 
 ## About this repository
 
-- `index.html` - The full CV page. Self-contained: no build step, no external dependencies, no JavaScript.
+- `index.html` - The full CV page. Self-contained: no build step, no external dependencies.
 - Designed for responsive viewing and clean print-to-PDF output.
 
 ## Local preview
