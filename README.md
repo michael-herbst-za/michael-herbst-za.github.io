@@ -1,4 +1,4 @@
-# Michael Herbst — CV
+# Michael Herbst - CV
 
 A clean, single-page HTML curriculum vitae hosted on GitHub Pages.
 
