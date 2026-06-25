@@ -20,16 +20,6 @@ A clean, single-page HTML curriculum vitae hosted on GitHub Pages.
 
 Open `index.html` in any modern browser:
 
-```bash
-# macOS
-open index.html
-
-# Linux
-xdg-open index.html
-
-# Windows
-start index.html
-
 
 ## License
 
