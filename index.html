@@ -1,146 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Default CV"> <title>Michael Herbst - Curriculum Vitae</title> <style>
-        :root {
-            --navy: #1F3A5F; /* */
-            --grey: #555555; /* */
-        }
-        body {
-            font-family: 'Calibri', sans-serif; /* */
-            color: #333;
-            line-height: 1.4;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        h1 {
-            text-align: center;
-            color: var(--navy); /* */
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            margin-bottom: 0.2rem;
-        }
-        h2 {
-            color: var(--navy); /* */
-            border-bottom: 2px solid var(--navy); /* */
-            padding-bottom: 5px;
-            margin-top: 30px;
-            text-transform: uppercase; /* */
-            letter-spacing: 1px;
-        }
-        .subtitle {
-            text-align: center;
-            color: var(--grey); /* */
-            font-style: italic; /* */
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        .contact {
-            text-align: center;
-            border-bottom: 2px solid var(--navy); /* */
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-        .job-header {
-            margin-top: 20px;
-            margin-bottom: 5px;
-        }
-        .job-title {
-            font-weight: bold; /* */
-            font-size: 1.1rem;
-        }
-        .employer {
-            color: var(--navy); /* */
-            font-style: italic; /* */
-            font-size: 1.1rem;
-        }
-        .job-meta {
-            color: var(--grey); /* */
-            font-style: italic; /* */
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-        }
-        ul {
-            margin-top: 5px;
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        .skill-row {
-            margin-bottom: 10px;
-        }
-        .skill-label {
-            font-weight: bold; /* */
-            color: var(--navy); /* */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael Herbst — Curriculum Vitae</title>
+  <style>
+    :root {
+      --navy: #1F3A5F;
+      --grey: #555555;
+      --rule: #BFBFBF;
+      --text: #333333;
+      --bg: #f5f5f5;
+      --paper: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Calibri", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.35;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 24px auto;
+      background: var(--paper);
+      padding: 48px 56px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    header { text-align: center; margin-bottom: 6px; }
+
+    h1 {
+      color: var(--navy);
+      font-size: 2.6rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin: 0 0 6px 0;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      color: var(--grey);
+      font-style: italic;
+      font-size: 1.05rem;
+      margin: 0 0 10px 0;
+    }
+
+    .contact {
+      font-size: 0.95rem;
+      color: var(--text);
+      border-bottom: 2px solid var(--navy);
+      padding-bottom: 10px;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      border-bottom: 2px solid var(--navy);
+      padding-bottom: 4px;
+      margin: 26px 0 12px 0;
+      font-weight: 700;
+    }
+
+    p { margin: 0 0 10px 0; }
+
+    .skill-row { margin-bottom: 8px; line-height: 1.4; }
+    .skill-label {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .job { margin-bottom: 16px; }
+    .job-header { margin-bottom: 2px; }
+    .job-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .job-employer {
+      color: var(--navy);
+      font-style: italic;
+    }
+    .job-meta {
+      color: var(--grey);
+      font-style: italic;
+      font-size: 0.92rem;
+      margin-bottom: 6px;
+    }
+
+    ul {
+      margin: 4px 0 0 0;
+      padding-left: 22px;
+    }
+    li {
+      margin-bottom: 5px;
+      line-height: 1.35;
+    }
+
+    .earlier-roles {
+      margin-top: 18px;
+    }
+    .earlier-roles .job-title {
+      font-size: 1.05rem;
+    }
+
+    .education-block { margin-bottom: 10px; }
+    .school {
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .school-meta {
+      color: var(--grey);
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    .info-row { margin-bottom: 8px; }
+    .info-label {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    @media print {
+      body { background: #fff; }
+      .container {
+        box-shadow: none;
+        margin: 0;
+        padding: 24px 32px;
+        max-width: 100%;
+      }
+      h2 { page-break-after: avoid; }
+      .job { page-break-inside: avoid; }
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 28px 22px; margin: 0; }
+      h1 { font-size: 2rem; letter-spacing: 1px; }
+      h2 { font-size: 1.05rem; }
+    }
+  </style>
 </head>
 <body>
-
+  <div class="container">
     <header>
-        <h1>MICHAEL HERBST</h1> <div class="subtitle">IT Support Specialist &middot; System Administrator &middot; Cloud, Cybersecurity & Web</div> <div class="contact">Jeffreys Bay, Eastern Cape, South Africa | (+27) 064 676 5276 | michael.anthony.herbst@gmail.com</div> </header>
+      <h1>Michael Herbst</h1>
+      <p class="subtitle">IT Support Specialist · System Administrator · Cloud, Cybersecurity &amp; Web</p>
+      <p class="contact">
+        Jeffreys Bay, Eastern Cape, South Africa &nbsp;|&nbsp; (+27) 064 676 5276 &nbsp;|&nbsp;
+        <a href="mailto:michael.anthony.herbst@gmail.com">michael.anthony.herbst@gmail.com</a>
+      </p>
+    </header>
 
-    <section>
-        <h2>Professional Summary</h2> <p>IT support specialist and system administrator with six-plus years of continuous, end-to-end client support for proprietary engineering software used across the South African market. Practical depth in .NET application support, Windows Server VPS administration, SQL/MySQL database management, and PowerShell and Bash automation. Now running an independent freelance practice building standards-compliant websites with local SEO and POPIA awareness, while progressing self-directed study in cloud, cybersecurity and AI tooling. Calm under pressure, meticulous with documentation, and available immediately.</p> </section>
-
-    <section>
-        <h2>Technical Skills</h2> <div class="skill-row"><span class="skill-label">Servers, Cloud & Virtualisation &mdash;</span> Windows Server 2019 administration; VPS provisioning, hardening and maintenance; Hyper-V / WSL2; VirtualBox; hybrid on-prem/cloud environments; cPanel and Softaculous-managed shared hosting; static-site hosting and deployment (Netlify); domain registration and DNS management (NS/A/SOA records, propagation).</div> <div class="skill-row"><span class="skill-label">Databases &mdash;</span> SQL Server, MySQL (cloud and local), Microsoft Access; query writing, basic schema design, backup and restore, integrity checks and troubleshooting.</div> <div class="skill-row"><span class="skill-label">Operating Systems &mdash;</span> Windows 10 / 11 (including LTSC and IoT LTSC editions); Group Policy; Registry; Windows hardening and debloating; Linux (Ubuntu, Lubuntu).</div> <div class="skill-row"><span class="skill-label">Scripting & Automation &mdash;</span> PowerShell (file organisation, hash-ledger workflows, scheduled tasks); Bash with Pandoc (HTML &leftrightarrow; Markdown pipelines); Git for Windows; document and compliance workflow tooling.</div> <div class="skill-row"><span class="skill-label">Client Support & Productivity &mdash;</span> Freshdesk ticket management; remote troubleshooting; client onboarding and training; technical documentation and guide authoring; screen-capture and tutorial production (Techsmith Snagit); Microsoft 365 administration; Word, Excel, PowerPoint, Project, Visio, Publisher; Sage Pastel Partner / Xpress; Sage Evolution; POS systems; Adobe Photoshop.</div> <div class="skill-row"><span class="skill-label">Information Security & Compliance &mdash;</span> POPIA awareness and applied review; firewall and egress control; foundational ethical hacking (TryHackMe progression toward eJPT / PNPT / OSCP).</div> <div class="skill-row"><span class="skill-label">AI & Emerging Technology &mdash;</span> Local LLM deployment with Ollama and AnythingLLM; Claude Code, Claude Desktop and Anthropic API integration; prompt design; Pandoc + Markdown + Obsidian knowledge-management pipelines.</div> <div class="skill-row"><span class="skill-label">Front-End Web Development &mdash;</span> Semantic HTML5; mobile-first CSS with token-driven design systems (CSS custom properties); accessibility basics (semantic landmarks, ARIA); JSON-LD structured data; Open Graph metadata; local SEO; WordPress and Softaculous deployment. Progressing toward full-stack development through structured self-study.</div> </section>
-
-    <section>
-        <h2>Professional Experience</h2> <div class="job-header">
-            <span class="job-title">Founder</span> <span class="employer">&middot; Freelance Web and SEO Consultancy</span> </div>
-        <div class="job-meta">Jeffreys Bay, South Africa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; May 2026 &ndash; Present</div> <ul>
-            <li>Independent practice delivering clean, standards-compliant static websites for South African professional services clients.</li> <li>End-to-end engagement: requirements gathering, content strategy, hand-coded HTML and CSS, accessibility basics, JSON-LD structured data and local SEO, draft regulatory pages (POPIA, ECTA), and WordPress-to-static deployment for cPanel and Softaculous environments.</li> <li>Use AI-assisted development tooling (Claude, Anthropic API) to accelerate delivery on solo engagements while maintaining hand-written, readable production code.</li> <li>Scaling toward full-stack web development through structured self-study; growing the offering and client base as opportunities arise.</li> </ul>
-
-        <div class="job-header">
-            <span class="job-title">Client Support Administrator</span> <span class="employer">&middot; Civilsoft Systems CC</span> </div>
-        <div class="job-meta">St Francis Bay, Eastern Cape, South Africa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; December 2019 &ndash; May 2026</div> <ul>
-            <li>Sole client-support resource for proprietary engineering software products used in over 270 South African offices, across six years and five months of continuous service.</li> <li>Owned client onboarding, training, and ongoing support across the full product life cycle for proprietary .NET-based engineering software.</li> <li>Proposed and executed a YouTube channel and updated user-guide programme, demonstrating independent project initiative alongside primary support duties.</li> <li>Authored and maintained technical documentation, runbooks, training material and user guides; delivered remote and on-site training to non-technical clients.</li> <li>Administered Windows Server 2019 VPS infrastructure as the scope of the role expanded: patching, user and access management, application deployment, monitoring, and recovery.</li> <li>Managed cloud-hosted MySQL and on-premise Microsoft Access databases for client deployments: query support, backups, restores, and integrity checks.</li> <li>Built PowerShell and Bash automation (file organisation, hash-ledger workflows, Pandoc document pipelines) and Git-based versioning to streamline support and documentation tasks.</li> <li>Deployed and evaluated local AI tooling (Ollama, AnythingLLM, Claude Code) to support documentation, scripting, and day-to-day operational workflows.</li> <li>Cross-functional contribution: marketing, sales support, training, and general office administration as required.</li> </ul>
-
-        <div class="job-header">
-            <span class="job-title">Assistant Manager (promoted from Internal Sales)</span> <span class="employer">&middot; Teleray CC</span> </div>
-        <div class="job-meta">Port Elizabeth, South Africa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; May 2018 &ndash; January 2019</div> <ul>
-            <li>Promoted from Internal Sales to Assistant Manager within four months.</li> <li>Managed B2B and retail sales of consumer electronics, hardware and audiovisual equipment; advised customers on technical fit.</li> <li>Trained new staff, ran the business in the owner's absence, and oversaw day-to-day operations and key-holder responsibilities.</li> <li>Handled inventory control, trial-balance bookkeeping, and marketing.</li> </ul>
-
-        <div class="job-header">
-            <span class="job-title">Sales Manager</span> <span class="employer">&middot; The Student Advisor</span> </div>
-        <div class="job-meta">January 2018 &ndash; March 2018  (role ended on company closure)</div> <ul>
-            <li>Led external sales, marketing and administration; developed and maintained the client database; ran sales presentations and outbound campaigns.</li> </ul>
-
-        <div class="job-header">
-            <span class="job-title">IT & Sales Consultant</span> <span class="employer">&middot; Irislink SA / The Media Genius SA</span> </div>
-        <div class="job-meta">March 2017 &ndash; October 2017  (retrenched on company restructuring)</div> <ul>
-            <li>Provided regional sales and IT support for optical character recognition software and associated devices, including deployment, configuration and end-user troubleshooting.</li> </ul>
-
-        <div class="job-header">
-            <span class="job-title">Earlier roles (2014 &ndash; 2018)</span> </div>
-        <ul>
-            <li>Sales Consultant &mdash; Wayne Pheiffer Cycles (April 2018, temporary).</li> <li>Freelance Tutor and Freelance DJ during tertiary studies (2016 &ndash; 2018).</li> <li>Event DJ/MC and Assistant Sound Technician &mdash; Lutiek Promotions & Sound (now Fresco Sounds), Welkom (2014 &ndash; 2015).</li> </ul>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Professional Summary</h2>
+      <p>
+        IT support specialist and system administrator with six-plus years of continuous, end-to-end client support for proprietary engineering software used across the South African market. Practical depth in .NET application support, Windows Server VPS administration, SQL/MySQL database management, and PowerShell and Bash automation. Now running an independent freelance practice building standards-compliant websites with local SEO and POPIA awareness, while progressing self-directed study in cloud, cybersecurity and AI tooling. Calm under pressure, meticulous with documentation, and available immediately.
+      </p>
     </section>
 
-    <section>
-        <h2>Certifications & Continuous Learning</h2> <ul>
-            <li>Active self-directed study covering Microsoft Azure, cybersecurity, full-stack web development, and the AI / LLM ecosystem.</li> <li>Cybersecurity progression: TryHackMe foundations, working toward eJPT, PNPT and OSCP.</li> <li>Practical depth in POPIA, Windows / Linux hardening, and document and compliance workflow design.</li> </ul>
+    <section aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Technical Skills</h2>
+
+      <div class="skill-row">
+        <span class="skill-label">Servers, Cloud &amp; Virtualisation —</span>
+        Windows Server 2019 administration; VPS provisioning, hardening and maintenance; Hyper-V / WSL2; VirtualBox; hybrid on-prem/cloud environments; cPanel and Softaculous-managed shared hosting; static-site hosting and deployment (Netlify); domain registration and DNS management (NS/A/SOA records, propagation).
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Databases —</span>
+        SQL Server, MySQL (cloud and local), Microsoft Access; query writing, basic schema design, backup and restore, integrity checks and troubleshooting.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Operating Systems —</span>
+        Windows 10 / 11 (including LTSC and IoT LTSC editions); Group Policy; Registry; Windows hardening and debloating; Linux (Ubuntu, Lubuntu).
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Scripting &amp; Automation —</span>
+        PowerShell (file organisation, hash-ledger workflows, scheduled tasks); Bash with Pandoc (HTML ↔ Markdown pipelines); Git for Windows; document and compliance workflow tooling.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Client Support &amp; Productivity —</span>
+        Freshdesk ticket management; remote troubleshooting; client onboarding and training; technical documentation and guide authoring; screen-capture and tutorial production (Techsmith Snagit); Microsoft 365 administration; Word, Excel, PowerPoint, Project, Visio, Publisher; Sage Pastel Partner / Xpress; Sage Evolution; POS systems; Adobe Photoshop.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Information Security &amp; Compliance —</span>
+        POPIA awareness and applied review; firewall and egress control; foundational ethical hacking (TryHackMe progression toward eJPT / PNPT / OSCP).
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">AI &amp; Emerging Technology —</span>
+        Local LLM deployment with Ollama and AnythingLLM; Claude Code, Claude Desktop and Anthropic API integration; prompt design; Pandoc + Markdown + Obsidian knowledge-management pipelines.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Front-End Web Development —</span>
+        Semantic HTML5; mobile-first CSS with token-driven design systems (CSS custom properties); accessibility basics (semantic landmarks, ARIA); JSON-LD structured data; Open Graph metadata; local SEO; WordPress and Softaculous deployment. Progressing toward full-stack development through structured self-study.
+      </div>
     </section>
 
-    <section>
-        <h2>Education</h2> <div class="job-header">
-            <span class="job-title">University of Pretoria</span> </div>
-        <ul>
-            <li>B.Eng. Computer Engineering (2015 &ndash; 2016, changed direction); B.Com. Law (2016 &ndash; 2017, discontinued).</li> </ul>
+    <section aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Professional Experience</h2>
 
+      <article class="job">
         <div class="job-header">
-            <span class="job-title">St Dominic's College, Welkom</span> <span class="job-meta">&middot; National Senior Certificate (IEB), 2014</span> </div>
+          <span class="job-title">Founder</span>
+          <span class="job-employer"> · Freelance Web and SEO Consultancy</span>
+        </div>
+        <div class="job-meta">Jeffreys Bay, South Africa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;May 2026 – Present</div>
         <ul>
-            <li>3rd in Matric &middot; Full Academic Honours. Distinctions: English HL (A), Afrikaans FAL (A), Life Orientation (A), Business Studies (A), Physical Sciences (A); Mathematics (B); Accounting (B).</li> <li>Leadership: Prefect, Peer Counsellor, Head of Entertainment Portfolio.  Sport: Rugby 1st XV, Soccer 1st XI, Jiu-Jitsu.</li> </ul>
+          <li>Independent practice delivering clean, standards-compliant static websites for South African professional services clients.</li>
+          <li>End-to-end engagement: requirements gathering, content strategy, hand-coded HTML and CSS, accessibility basics, JSON-LD structured data and local SEO, draft regulatory pages (POPIA, ECTA), and WordPress-to-static deployment for cPanel and Softaculous environments.</li>
+          <li>Use AI-assisted development tooling (Claude, Anthropic API) to accelerate delivery on solo engagements while maintaining hand-written, readable production code.</li>
+          <li>Scaling toward full-stack web development through structured self-study; growing the offering and client base as opportunities arise.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <span class="job-title">Client Support Administrator</span>
+          <span class="job-employer"> · Civilsoft Systems CC</span>
+        </div>
+        <div class="job-meta">St Francis Bay, Eastern Cape, South Africa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 2019 – May 2026</div>
+        <ul>
+          <li>Sole client-support resource for proprietary engineering software products used in over 270 South African offices, across six years and five months of continuous service.</li>
+          <li>Owned client onboarding, training, and ongoing support across the full product life cycle for proprietary .NET-based engineering software.</li>
+          <li>Proposed and executed a YouTube channel and updated user-guide programme, demonstrating independent project initiative alongside primary support duties.</li>
+          <li>Authored and maintained technical documentation, runbooks, training material and user guides; delivered remote and on-site training to non-technical clients.</li>
+          <li>Administered Windows Server 2019 VPS infrastructure as the scope of the role expanded: patching, user and access management, application deployment, monitoring, and recovery.</li>
+          <li>Managed cloud-hosted MySQL and on-premise Microsoft Access databases for client deployments: query support, backups, restores, and integrity checks.</li>
+          <li>Built PowerShell and Bash automation (file organisation, hash-ledger workflows, Pandoc document pipelines) and Git-based versioning to streamline support and documentation tasks.</li>
+          <li>Deployed and evaluated local AI tooling (Ollama, AnythingLLM, Claude Code) to support documentation, scripting, and day-to-day operational workflows.</li>
+          <li>Cross-functional contribution: marketing, sales support, training, and general office administration as required.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <span class="job-title">Assistant Manager (promoted from Internal Sales)</span>
+          <span class="job-employer"> · Teleray CC</span>
+        </div>
+        <div class="job-meta">Port Elizabeth, South Africa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;May 2018 – January 2019</div>
+        <ul>
+          <li>Promoted from Internal Sales to Assistant Manager within four months.</li>
+          <li>Managed B2B and retail sales of consumer electronics, hardware and audiovisual equipment; advised customers on technical fit.</li>
+          <li>Trained new staff, ran the business in the owner's absence, and oversaw day-to-day operations and key-holder responsibilities.</li>
+          <li>Handled inventory control, trial-balance bookkeeping, and marketing.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <span class="job-title">Sales Manager</span>
+          <span class="job-employer"> · The Student Advisor</span>
+        </div>
+        <div class="job-meta">January 2018 – March 2018 &nbsp;(role ended on company closure)</div>
+        <ul>
+          <li>Led external sales, marketing and administration; developed and maintained the client database; ran sales presentations and outbound campaigns.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <span class="job-title">IT &amp; Sales Consultant</span>
+          <span class="job-employer"> · Irislink SA / The Media Genius SA</span>
+        </div>
+        <div class="job-meta">March 2017 – October 2017 &nbsp;(retrenched on company restructuring)</div>
+        <ul>
+          <li>Provided regional sales and IT support for optical character recognition software and associated devices, including deployment, configuration and end-user troubleshooting.</li>
+        </ul>
+      </article>
+
+      <div class="earlier-roles">
+        <div class="job-header">
+          <span class="job-title">Earlier roles (2014 – 2018)</span>
+        </div>
+        <ul>
+          <li>Sales Consultant — Wayne Pheiffer Cycles (April 2018, temporary).</li>
+          <li>Freelance Tutor and Freelance DJ during tertiary studies (2016 – 2018).</li>
+          <li>Event DJ/MC and Assistant Sound Technician — Lutiek Promotions &amp; Sound (now Fresco Sounds), Welkom (2014 – 2015).</li>
+        </ul>
+      </div>
     </section>
 
-    <section>
-        <h2>Languages & Additional Information</h2> <p><strong>Languages:</strong> English (Home Language) &middot; Afrikaans (Fluent) &middot; Sesotho (Intermediate) &middot; isiXhosa (Basic)</p> <p><strong>Other:</strong> South African citizen &middot; Code 08 driver's licence &middot; Available immediately.</p> <p><strong>References:</strong> <em>Available on request.</em></p> </section>
+    <section aria-labelledby="learning-heading">
+      <h2 id="learning-heading">Certifications &amp; Continuous Learning</h2>
+      <ul>
+        <li>Active self-directed study covering Microsoft Azure, cybersecurity, full-stack web development, and the AI / LLM ecosystem.</li>
+        <li>Cybersecurity progression: TryHackMe foundations, working toward eJPT, PNPT and OSCP.</li>
+        <li>Practical depth in POPIA, Windows / Linux hardening, and document and compliance workflow design.</li>
+      </ul>
+    </section>
 
+    <section aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+
+      <div class="education-block">
+        <div class="school">University of Pretoria</div>
+        <ul>
+          <li>B.Eng. Computer Engineering (2015 – 2016, changed direction); B.Com. Law (2016 – 2017, discontinued).</li>
+        </ul>
+      </div>
+
+      <div class="education-block">
+        <div class="school">St Dominic's College, Welkom <span class="school-meta">· National Senior Certificate (IEB), 2014</span></div>
+        <ul>
+          <li>3rd in Matric · Full Academic Honours. Distinctions: English HL (A), Afrikaans FAL (A), Life Orientation (A), Business Studies (A), Physical Sciences (A); Mathematics (B); Accounting (B).</li>
+          <li>Leadership: Prefect, Peer Counsellor, Head of Entertainment Portfolio. &nbsp;Sport: Rugby 1st XV, Soccer 1st XI, Jiu-Jitsu.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="additional-heading">
+      <h2 id="additional-heading">Languages &amp; Additional Information</h2>
+      <div class="info-row">
+        <span class="info-label">Languages:</span>
+        English (Home Language) · Afrikaans (Fluent) · Sesotho (Basic) · isiXhosa (Basic)
+      </div>
+      <div class="info-row">
+        <span class="info-label">Other:</span>
+        South African citizen · Code 08 driver's licence · Available immediately.
+      </div>
+      <div class="info-row">
+        <span class="info-label">References:</span>
+        <em>Available on request.</em>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
