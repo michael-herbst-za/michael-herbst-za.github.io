@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traits - Michael Herbst</title>
+  <style>
+    :root {
+      --navy: #0066ff;
+      --grey: #38d6e0;
+      --rule: #333333;
+      --text: #ffffff;
+      --bg: #141414;
+      --paper: #1e1e1e;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "IBM Plex Sans", "DejaVu Sans", "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+      letter-spacing: 0.16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 24px auto;
+      background: var(--paper);
+      padding: 48px 56px;
+      border: 1px solid var(--rule);
+      box-shadow: 0 0 40px rgba(0,102,255,0.25), 0 0 20px rgba(0,255,255,0.12), 0 4px 30px rgba(0,0,0,0.5);
+    }
+
+    header { text-align: center; margin-bottom: 6px; }
+
+    h1 {
+      color: var(--text);
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+      font-weight: 300;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 22px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      color: var(--paper);
+      background: var(--navy);
+      border: 1px solid var(--navy);
+      border-radius: 0;
+      padding: 10px 16px;
+      text-decoration: none;
+      box-shadow: 0 0 9px rgba(0,102,255,0.4), 0 2px 0 rgba(0,0,0,0.3);
+      transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    }
+    .back-link:hover {
+      box-shadow: 0 0 18px rgba(0,102,255,0.65), 0 0 10px rgba(0,255,255,0.28);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    h2 {
+      color: var(--text);
+      font-size: 1.15rem;
+      text-transform: none;
+      letter-spacing: 0.16px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 4px;
+      margin: 26px 0 12px 0;
+      font-weight: 400;
+    }
+
+    p { margin: 0 0 10px 0; }
+
+    .skill-row { margin-bottom: 8px; line-height: 1.4; }
+    .skill-label {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .placeholder {
+      color: var(--grey);
+      font-style: italic;
+    }
+
+    ul {
+      margin: 4px 0 0 0;
+      padding-left: 22px;
+    }
+    li {
+      margin-bottom: 5px;
+      line-height: 1.35;
+    }
+
+    a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    @media print {
+      :root {
+        --navy: #0044b3;
+        --grey: #007a85;
+        --text: #111111;
+        --bg: #ffffff;
+        --paper: #ffffff;
+      }
+      body { background: #fff; }
+      .container {
+        border: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 24px 32px;
+        max-width: 100%;
+      }
+      h2 { page-break-after: avoid; }
+      .back-link { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 28px 22px; margin: 0; }
+      h1 { font-size: 1.7rem; letter-spacing: 1px; }
+      h2 { font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="back-link" href="index.html">&larr; Back to CV</a>
+
+    <header>
+      <h1>Traits</h1>
+    </header>
+
+    <section aria-labelledby="traits-heading">
+      <h2 id="traits-heading">Working Style</h2>
+
+      <div class="skill-row">
+        <span class="skill-label">Calm under pressure —</span>
+        Managed the entire client support function solo for six-plus years, keeping response times steady even during peak ticket volume.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Meticulous documentation —</span>
+        Authored and maintained technical documentation, runbooks, training material and user guides used across the client base.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Rapid self-directed learning —</span>
+        Went from no formal coding background to hand-coding standards-compliant client websites, entirely through self-study.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Rapport-building across diverse stakeholders —</span>
+        Built durable relationships with non-technical clients as the single point of contact across the full client lifecycle.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Translating technical concepts for non-technical audiences —</span>
+        Delivered remote and on-site training that made complex engineering software approachable for everyday users.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Reliable &amp; dependable —</span>
+        Trusted to run a shop single-handedly in an owner's absence, and later the sole support resource for a national client base.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Organised &amp; process-driven —</span>
+        Built structured filing, version control and document/compliance workflows from scratch to keep a small business running smoothly.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Independent initiative —</span>
+        Proposed and executed a YouTube channel and updated user-guide programme without being asked, alongside primary support duties.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Comfortable owning the whole stack —</span>
+        Ran client support, infrastructure, databases, scripting and documentation as the sole technical resource in a small organisation.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Genuinely curious &amp; quick to adapt —</span>
+        Picked up local LLM tooling (Ollama, AnythingLLM, Claude Code) and folded it into daily workflows well ahead of most peers.
+      </div>
+    </section>
+  </div>
+</body>
+</html>

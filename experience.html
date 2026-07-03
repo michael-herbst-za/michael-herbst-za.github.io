@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience - Michael Herbst</title>
+  <style>
+    :root {
+      --navy: #0066ff;
+      --grey: #38d6e0;
+      --rule: #333333;
+      --text: #ffffff;
+      --bg: #141414;
+      --paper: #1e1e1e;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "IBM Plex Sans", "DejaVu Sans", "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+      letter-spacing: 0.16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 24px auto;
+      background: var(--paper);
+      padding: 48px 56px;
+      border: 1px solid var(--rule);
+      box-shadow: 0 0 40px rgba(0,102,255,0.25), 0 0 20px rgba(0,255,255,0.12), 0 4px 30px rgba(0,0,0,0.5);
+    }
+
+    header { text-align: center; margin-bottom: 6px; }
+
+    h1 {
+      color: var(--text);
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+      font-weight: 300;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 22px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      color: var(--paper);
+      background: var(--navy);
+      border: 1px solid var(--navy);
+      border-radius: 0;
+      padding: 10px 16px;
+      text-decoration: none;
+      box-shadow: 0 0 9px rgba(0,102,255,0.4), 0 2px 0 rgba(0,0,0,0.3);
+      transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    }
+    .back-link:hover {
+      box-shadow: 0 0 18px rgba(0,102,255,0.65), 0 0 10px rgba(0,255,255,0.28);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    h2 {
+      color: var(--text);
+      font-size: 1.15rem;
+      text-transform: none;
+      letter-spacing: 0.16px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 4px;
+      margin: 26px 0 12px 0;
+      font-weight: 400;
+    }
+
+    p { margin: 0 0 10px 0; }
+
+    .job { margin-bottom: 16px; }
+    .job-header { margin-bottom: 2px; }
+    .job-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .job-employer {
+      color: var(--navy);
+      font-style: italic;
+    }
+    .job-meta {
+      color: var(--grey);
+      font-style: italic;
+      font-size: 0.92rem;
+      margin-bottom: 6px;
+    }
+
+    .placeholder {
+      color: var(--grey);
+      font-style: italic;
+    }
+
+    ul {
+      margin: 4px 0 0 0;
+      padding-left: 22px;
+    }
+    li {
+      margin-bottom: 5px;
+      line-height: 1.35;
+    }
+
+    a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    @media print {
+      :root {
+        --navy: #0044b3;
+        --grey: #007a85;
+        --text: #111111;
+        --bg: #ffffff;
+        --paper: #ffffff;
+      }
+      body { background: #fff; }
+      .container {
+        border: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 24px 32px;
+        max-width: 100%;
+      }
+      h2 { page-break-after: avoid; }
+      .job { page-break-inside: avoid; }
+      .back-link { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 28px 22px; margin: 0; }
+      h1 { font-size: 1.7rem; letter-spacing: 1px; }
+      h2 { font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="back-link" href="index.html">&larr; Back to CV</a>
+
+    <header>
+      <h1>Experience</h1>
+    </header>
+
+    <section aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Professional Experience</h2>
+
+      <article class="job">
+        <div class="job-header">
+          <span class="job-title">Founder</span>
+          <span class="job-employer"> &middot; Freelance Web and SEO Consultancy</span>
+        </div>
+        <div class="job-meta">Jeffreys Bay, South Africa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;May 2026 – Present</div>
+        <ul>
+          <li>Independent practice delivering clean, standards-compliant static websites for South African professional services clients.</li>
+          <li>End-to-end engagement: requirements gathering, content strategy, hand-coded HTML and CSS, accessibility basics, JSON-LD structured data and local SEO, draft regulatory pages (POPIA, ECTA), and WordPress-to-static deployment for cPanel and Softaculous environments.</li>
+          <li>Run the commercial side of the practice end to end: tiered service packaging and retainer / managed-services pricing, vendor and provider evaluation, and a self-built browser quote generator with live preview and PDF export.</li>
+          <li>Use AI-assisted development tooling (Claude, Anthropic API) to accelerate delivery on solo engagements while maintaining hand-written, readable production code.</li>
+          <li>Scaling toward full-stack web development through structured self-study; growing the offering and client base as opportunities arise.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <span class="job-title">Client Support Administrator</span>
+          <span class="job-employer"> &middot; Civilsoft Systems CC</span>
+        </div>
+        <div class="job-meta">St Francis Bay, Eastern Cape, South Africa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 2019 – May 2026</div>
+        <ul>
+          <li>Sole client-support resource for proprietary engineering software products used in over 270 South African offices, across six years and five months of continuous service.</li>
+          <li>Owned client onboarding, training, and ongoing support across the full product life cycle for proprietary .NET-based engineering software.</li>
+          <li>Administered Windows Server 2019 VPS infrastructure as the scope of the role expanded: patching, user and access management, application deployment, monitoring, and recovery.</li>
+          <li>Managed cloud-hosted MySQL and on-premise Microsoft Access databases for client deployments: query support, backups, restores, and integrity checks.</li>
+          <li>Ran day-to-day helpdesk operations on Freshdesk: ticket triage, prioritisation, resolution and follow-up for a national client base.</li>
+          <li>Built PowerShell and Bash automation (file organisation, hash-ledger workflows, Pandoc document pipelines) and Git-based versioning to streamline support and documentation tasks.</li>
+          <li>Proposed and executed a YouTube channel and updated user-guide programme, demonstrating independent project initiative alongside primary support duties.</li>
+          <li>Cross-functional contribution: marketing, sales support, training, and general office administration as required.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <span class="job-title">Assistant Manager (promoted from Internal Sales)</span>
+          <span class="job-employer"> &middot; Teleray CC</span>
+        </div>
+        <div class="job-meta">Port Elizabeth, South Africa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;May 2018 – January 2019</div>
+        <ul>
+          <li>Promoted from Internal Sales to Assistant Manager within four months.</li>
+          <li>Managed B2B and retail sales of consumer electronics, hardware and audiovisual equipment; advised customers on technical fit.</li>
+          <li>Built and maintained customer relationships and repeat business through technical product knowledge and reliable after-sales support.</li>
+          <li>Trained new staff, ran the business in the owner's absence, and oversaw day-to-day operations and key-holder responsibilities.</li>
+          <li>Handled inventory control, trial-balance bookkeeping, and marketing.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <span class="job-title">Sales Manager</span>
+          <span class="job-employer"> &middot; The Student Advisor</span>
+        </div>
+        <div class="job-meta">January 2018 – March 2018 &nbsp;(role ended on company closure)</div>
+        <ul>
+          <li>Led external sales, marketing and administration; developed and maintained the client database; ran sales presentations and outbound campaigns.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <span class="job-title">IT &amp; Sales Consultant</span>
+          <span class="job-employer"> &middot; Irislink SA / The Media Genius SA</span>
+        </div>
+        <div class="job-meta">March 2017 – October 2017 &nbsp;(retrenched on company restructuring)</div>
+        <ul>
+          <li>Provided regional sales and technical support for optical character recognition software and devices: pre-sales advice, deployment, configuration and end-user troubleshooting.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <span class="job-title">Sales Consultant</span>
+          <span class="job-employer"> &middot; Wayne Pheiffer Cycles</span>
+        </div>
+        <div class="job-meta">April 2018 &nbsp;(temporary)</div>
+        <ul>
+          <li>Short-term retail sales role assisting with seasonal demand.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <span class="job-title">Freelance Tutor</span>
+        </div>
+        <div class="job-meta">2016 – 2018 &nbsp;(during tertiary studies)</div>
+        <ul>
+          <li>Tutored fellow students on an independent basis alongside university studies.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <span class="job-title">Freelance DJ</span>
+        </div>
+        <div class="job-meta">2016 – 2018 &nbsp;(during tertiary studies)</div>
+        <ul>
+          <li>Performed as a freelance DJ for private and student events alongside university studies.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <span class="job-title">Event DJ/MC</span>
+          <span class="job-employer"> &middot; Lutiek Promotions &amp; Sound (now Fresco Sounds)</span>
+        </div>
+        <div class="job-meta">Welkom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2014 – 2015</div>
+        <ul>
+          <li>Hosted and performed at live events as DJ/MC for a regional promotions and sound company.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <span class="job-title">Assistant Sound Technician</span>
+          <span class="job-employer"> &middot; Lutiek Promotions &amp; Sound (now Fresco Sounds)</span>
+        </div>
+        <div class="job-meta">Welkom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2014 – 2015</div>
+        <ul>
+          <li>Supported live event sound setup and operation alongside DJ/MC duties.</li>
+        </ul>
+      </article>
+    </section>
+  </div>
+</body>
+</html>

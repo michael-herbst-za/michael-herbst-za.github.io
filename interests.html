@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interests - Michael Herbst</title>
+  <style>
+    :root {
+      --navy: #0066ff;
+      --grey: #38d6e0;
+      --rule: #333333;
+      --text: #ffffff;
+      --bg: #141414;
+      --paper: #1e1e1e;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "IBM Plex Sans", "DejaVu Sans", "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+      letter-spacing: 0.16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 24px auto;
+      background: var(--paper);
+      padding: 48px 56px;
+      border: 1px solid var(--rule);
+      box-shadow: 0 0 40px rgba(0,102,255,0.25), 0 0 20px rgba(0,255,255,0.12), 0 4px 30px rgba(0,0,0,0.5);
+    }
+
+    header { text-align: center; margin-bottom: 6px; }
+
+    h1 {
+      color: var(--text);
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+      font-weight: 300;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 22px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      color: var(--paper);
+      background: var(--navy);
+      border: 1px solid var(--navy);
+      border-radius: 0;
+      padding: 10px 16px;
+      text-decoration: none;
+      box-shadow: 0 0 9px rgba(0,102,255,0.4), 0 2px 0 rgba(0,0,0,0.3);
+      transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    }
+    .back-link:hover {
+      box-shadow: 0 0 18px rgba(0,102,255,0.65), 0 0 10px rgba(0,255,255,0.28);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    h2 {
+      color: var(--text);
+      font-size: 1.15rem;
+      text-transform: none;
+      letter-spacing: 0.16px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 4px;
+      margin: 26px 0 12px 0;
+      font-weight: 400;
+    }
+
+    p { margin: 0 0 10px 0; }
+
+    .skill-row { margin-bottom: 8px; line-height: 1.4; }
+    .skill-label {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .placeholder {
+      color: var(--grey);
+      font-style: italic;
+    }
+
+    ul {
+      margin: 4px 0 0 0;
+      padding-left: 22px;
+    }
+    li {
+      margin-bottom: 5px;
+      line-height: 1.35;
+    }
+
+    a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    @media print {
+      :root {
+        --navy: #0044b3;
+        --grey: #007a85;
+        --text: #111111;
+        --bg: #ffffff;
+        --paper: #ffffff;
+      }
+      body { background: #fff; }
+      .container {
+        border: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 24px 32px;
+        max-width: 100%;
+      }
+      h2 { page-break-after: avoid; }
+      .back-link { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 28px 22px; margin: 0; }
+      h1 { font-size: 1.7rem; letter-spacing: 1px; }
+      h2 { font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="back-link" href="index.html">&larr; Back to CV</a>
+
+    <header>
+      <h1>Interests</h1>
+    </header>
+
+    <section aria-labelledby="interests-heading">
+      <h2 id="interests-heading">Personal Interests</h2>
+
+      <div class="skill-row">
+        <span class="skill-label">Sport —</span>
+        Rugby (1st XV), Soccer (1st XI) and Jiu-Jitsu; competitive team and individual sport since school.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Music &amp; Sound —</span>
+        Event DJ/MC and assistant sound technician work, plus freelance DJing during tertiary studies; a long-standing interest in live sound and music.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Home-Lab &amp; Self-Hosting —</span>
+        Building and maintaining a personal home-lab network (VPS configuration, firewall/routing, DNS/DHCP/VPN) out of curiosity, well beyond what client work requires.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">AI &amp; LLM Experimentation —</span>
+        Running local models with Ollama and AnythingLLM, and exploring Claude Code, Claude Desktop and the Anthropic API as a personal interest as much as a professional one.
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Teaching &amp; Mentoring —</span>
+        Freelance tutoring during tertiary studies; enjoys breaking down technical concepts for non-technical audiences.
+      </div>
+    </section>
+
+    <section aria-labelledby="side-projects-heading">
+      <h2 id="side-projects-heading">Side Projects &amp; Community</h2>
+      <ul>
+        <li>Self-built browser-based quote generator with live preview and PDF export, developed to streamline freelance client quoting.</li>
+        <li>Proposed and executed a YouTube channel and updated user-guide programme at Civilsoft Systems, alongside primary support duties.</li>
+        <li>Building an independent freelance web and SEO consultancy from the ground up — scoping, pricing, delivery and client relationships, solo.</li>
+        <li>Personal knowledge-management practice using Pandoc, Markdown and Obsidian to organise technical learning and documentation.</li>
+        <li>School leadership and community involvement: Prefect, Peer Counsellor, and Head of the Entertainment Portfolio at St Dominic's College.</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
