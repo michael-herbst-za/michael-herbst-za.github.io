@@ -4,208 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Michael Herbst - Curriculum Vitae</title>
-  <style>
-    :root {
-      --navy: #0066ff;
-      --grey: #38d6e0;
-      --rule: #333333;
-      --text: #ffffff;
-      --bg: #141414;
-      --paper: #1e1e1e;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "IBM Plex Sans", "DejaVu Sans", "Helvetica Neue", Arial, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.5;
-      letter-spacing: 0.16px;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .container {
-      max-width: 920px;
-      margin: 24px auto;
-      background: var(--paper);
-      padding: 48px 56px;
-      border: 1px solid var(--rule);
-      box-shadow: 0 0 40px rgba(0,102,255,0.25), 0 0 20px rgba(0,255,255,0.12), 0 4px 30px rgba(0,0,0,0.5);
-    }
-
-    header { text-align: center; margin-bottom: 6px; }
-
-    h1 {
-      color: var(--text);
-      font-size: 2.6rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin: 0 0 6px 0;
-      font-weight: 300;
-    }
-
-    .subtitle {
-      color: var(--grey);
-      font-style: italic;
-      font-size: 1.05rem;
-      margin: 0 0 10px 0;
-    }
-
-    .contact {
-      font-size: 0.95rem;
-      color: var(--text);
-      border-bottom: 1px solid var(--rule);
-      padding-bottom: 10px;
-      margin-bottom: 22px;
-    }
-
-    h2 {
-      color: var(--text);
-      font-size: 1.15rem;
-      text-transform: none;
-      letter-spacing: 0.16px;
-      border-bottom: 1px solid var(--rule);
-      padding-bottom: 4px;
-      margin: 26px 0 12px 0;
-      font-weight: 400;
-    }
-
-    p { margin: 0 0 10px 0; }
-
-    .skill-row { margin-bottom: 8px; line-height: 1.4; }
-    .skill-label {
-      color: var(--navy);
-      font-weight: 700;
-    }
-
-    .job { margin-bottom: 16px; }
-    .job-header { margin-bottom: 2px; }
-    .job-title {
-      font-weight: 700;
-      font-size: 1.05rem;
-    }
-    .job-employer {
-      color: var(--navy);
-      font-style: italic;
-    }
-    .job-meta {
-      color: var(--grey);
-      font-style: italic;
-      font-size: 0.92rem;
-      margin-bottom: 6px;
-    }
-
-    ul {
-      margin: 4px 0 0 0;
-      padding-left: 22px;
-    }
-    li {
-      margin-bottom: 5px;
-      line-height: 1.35;
-    }
-
-    .earlier-roles {
-      margin-top: 18px;
-    }
-    .earlier-roles .job-title {
-      font-size: 1.05rem;
-    }
-
-    .education-block { margin-bottom: 10px; }
-    .school {
-      font-weight: 700;
-      font-size: 1.05rem;
-    }
-    .school-meta {
-      color: var(--grey);
-      font-style: italic;
-      font-size: 0.95rem;
-    }
-
-    .info-row { margin-bottom: 8px; }
-    .info-label {
-      color: var(--navy);
-      font-weight: 700;
-    }
-
-    a {
-      color: var(--navy);
-      text-decoration: none;
-    }
-    a:hover { text-decoration: underline; }
-
-    .nav-row {
-      display: flex;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin: 4px 0 22px 0;
-    }
-    .nav-btn {
-      display: inline-block;
-      width: 150px;
-      text-align: center;
-      color: var(--paper);
-      background: var(--navy);
-      border: 1px solid var(--navy);
-      border-radius: 6px;
-      padding: 12px 16px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      text-decoration: none;
-      box-shadow: 0 0 9px rgba(0,102,255,0.4), 0 2px 0 rgba(0,0,0,0.3);
-      transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
-    }
-    .nav-btn:hover {
-      background: var(--navy);
-      color: var(--paper);
-      box-shadow: 0 0 18px rgba(0,102,255,0.65), 0 0 10px rgba(0,255,255,0.28);
-      transform: translateY(-1px);
-      text-decoration: none;
-    }
-
-    @media print {
-      :root {
-        --navy: #0044b3;
-        --grey: #007a85;
-        --text: #111111;
-        --bg: #ffffff;
-        --paper: #ffffff;
-      }
-      body { background: #fff; }
-      .container {
-        border: none;
-        box-shadow: none;
-        margin: 0;
-        padding: 24px 32px;
-        max-width: 100%;
-      }
-      h2 { page-break-after: avoid; }
-      .job { page-break-inside: avoid; }
-      .nav-row { display: none; }
-    }
-
-    @media (max-width: 640px) {
-      .container { padding: 28px 22px; margin: 0; }
-      h1 { font-size: 2rem; letter-spacing: 1px; }
-      h2 { font-size: 1.05rem; }
-    }
-  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <div class="container">
-    <header>
+    <header class="page-header">
       <h1>Michael Herbst</h1>
-      <p class="subtitle">IT Support Specialist · System Administrator · Cloud, Cybersecurity &amp; Web</p>
-      <p class="contact">
+      <p class="subtitle">IT Support Specialist &middot; System Administrator &middot; Cloud, Cybersecurity &amp; Web</p>
+    </header>
+
+    <div class="brand-stripe"></div>
+
+    <div class="contact-card">
+      <span class="contact-label">Contact</span>
+      <div class="contact-details">
         Jeffreys Bay, Eastern Cape, South Africa &nbsp;|&nbsp; +27 64 676 5276 &nbsp;|&nbsp;
         <a href="mailto:michael.anthony.herbst@gmail.com">michael.anthony.herbst@gmail.com</a>
-      </p>
-    </header>
+      </div>
+    </div>
 
     <nav class="nav-row" aria-label="CV sections">
       <a class="nav-btn" href="skills.html">Skills</a>
@@ -217,9 +37,11 @@
 
     <section aria-labelledby="summary-heading">
       <h2 id="summary-heading">Professional Summary</h2>
-      <p>
-        IT support specialist and system administrator with six-plus years of continuous, end-to-end client support for proprietary engineering software used across the South African market. Practical depth in .NET application support, Windows Server VPS administration, SQL/MySQL database management, and PowerShell and Bash automation. Now running an independent freelance practice building standards-compliant websites with local SEO and POPIA awareness, while progressing self-directed study in cloud, cybersecurity and AI tooling. Calm under pressure, meticulous with documentation, and available immediately.
-      </p>
+      <div class="callout">
+        <p>
+          IT support specialist and system administrator with six-plus years of continuous, end-to-end client support for proprietary engineering software used across the South African market. Practical depth in .NET application support, Windows Server VPS administration, SQL/MySQL database management, and PowerShell and Bash automation. Now running an independent freelance practice building standards-compliant websites with local SEO and POPIA awareness, while progressing self-directed study in cloud, cybersecurity and AI tooling. Calm under pressure, meticulous with documentation, and available immediately.
+        </p>
+      </div>
     </section>
 
     <section aria-labelledby="skills-heading">
@@ -269,9 +91,10 @@
     <section aria-labelledby="experience-heading">
       <h2 id="experience-heading">Professional Experience</h2>
 
-      <article class="job">
+      <article class="entry-card">
         <div class="job-header">
           <span class="job-title">Founder</span>
+          <span class="badge">Current</span>
           <span class="job-employer"> · Freelance Web and SEO Consultancy</span>
         </div>
         <div class="job-meta">Jeffreys Bay, South Africa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;May 2026 – Present</div>
@@ -283,7 +106,7 @@
         </ul>
       </article>
 
-      <article class="job">
+      <article class="entry-card">
         <div class="job-header">
           <span class="job-title">Client Support Administrator</span>
           <span class="job-employer"> · Civilsoft Systems CC</span>
@@ -302,7 +125,7 @@
         </ul>
       </article>
 
-      <article class="job">
+      <article class="entry-card">
         <div class="job-header">
           <span class="job-title">Assistant Manager (promoted from Internal Sales)</span>
           <span class="job-employer"> · Teleray CC</span>
@@ -316,7 +139,7 @@
         </ul>
       </article>
 
-      <article class="job">
+      <article class="entry-card">
         <div class="job-header">
           <span class="job-title">Sales Manager</span>
           <span class="job-employer"> · The Student Advisor</span>
@@ -327,7 +150,7 @@
         </ul>
       </article>
 
-      <article class="job">
+      <article class="entry-card">
         <div class="job-header">
           <span class="job-title">IT &amp; Sales Consultant</span>
           <span class="job-employer"> · Irislink SA / The Media Genius SA</span>
@@ -393,6 +216,11 @@
         <em>Available on request.</em>
       </div>
     </section>
+
+    <footer class="site-footer">
+      <span class="footer-brand">Michael Herbst</span>
+      <span class="footer-contact">michael.anthony.herbst@gmail.com &middot; +27 64 676 5276</span>
+    </footer>
   </div>
 </body>
 </html>
