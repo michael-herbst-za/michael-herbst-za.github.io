@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interests - Michael Herbst</title>
+  <title>Interests &middot; Michael Herbst</title>
+  <meta name="description" content="Personal interests and side projects of Michael Herbst: sport, music and sound, home-lab and self-hosting, AI experimentation, and teaching.">
+  <meta name="theme-color" content="#0a7a70">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,59 +13,92 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <div class="container">
-    <a class="back-link" href="index.html">&larr; Back to CV</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="brand-stripe"></div>
-
-    <header class="page-header">
-      <h1>Interests</h1>
-    </header>
-
-    <section aria-labelledby="interests-heading">
-      <h2 id="interests-heading">Personal Interests</h2>
-
-      <div class="skill-row">
-        <span class="skill-label">Sport —</span>
-        Rugby (1st XV), Soccer (1st XI) and Jiu-Jitsu; competitive team and individual sport since school.
+  <header class="site-header">
+    <div class="wrap">
+      <div class="header-inner">
+        <div class="brand">
+          <div>
+            <div class="wordmark">MICHAEL HERBST</div>
+            <div class="descriptor">IT Support &middot; System Administration &middot; Cloud &amp; Web</div>
+          </div>
+        </div>
+        <nav class="nav-row" aria-label="CV sections">
+          <a class="nav-btn" href="index.html">Overview</a>
+          <a class="nav-btn" href="skills.html">Skills</a>
+          <a class="nav-btn" href="experience.html">Experience</a>
+          <a class="nav-btn" href="learning.html">Learning</a>
+          <a class="nav-btn active" href="interests.html" aria-current="page">Interests</a>
+          <a class="nav-btn" href="traits.html">Traits</a>
+        </nav>
       </div>
+    </div>
+  </header>
+  <div class="brand-stripe"></div>
 
-      <div class="skill-row">
-        <span class="skill-label">Music &amp; Sound —</span>
-        Event DJ/MC and assistant sound technician work, plus freelance DJing during tertiary studies; a long-standing interest in live sound and music.
-      </div>
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Curriculum Vitae &middot; Michael Herbst</p>
+      <h1>Interests.</h1>
+      <p class="lede">Personal interests and side projects beyond the day job, from sport and live sound to home-lab networking and local AI.</p>
+    </div>
+  </section>
 
-      <div class="skill-row">
-        <span class="skill-label">Home-Lab &amp; Self-Hosting —</span>
-        Building and maintaining a personal home-lab network (VPS configuration, firewall/routing, DNS/DHCP/VPN) out of curiosity, well beyond what client work requires.
-      </div>
+  <main id="main">
+    <section class="section" aria-labelledby="interests-heading">
+      <div class="wrap">
+        <h2 id="interests-heading"><span class="section-number">01</span> Personal Interests</h2>
 
-      <div class="skill-row">
-        <span class="skill-label">AI &amp; LLM Experimentation —</span>
-        Running local models with Ollama and AnythingLLM, and exploring Claude Code, Claude Desktop and the Anthropic API as a personal interest as much as a professional one.
-      </div>
+        <div class="item-row">
+          <span class="item-label">Sport:</span>
+          <p>Rugby (1st XV), Soccer (1st XI) and Jiu-Jitsu; competitive team and individual sport since school.</p>
+        </div>
 
-      <div class="skill-row">
-        <span class="skill-label">Teaching &amp; Mentoring —</span>
-        Freelance tutoring during tertiary studies; enjoys breaking down technical concepts for non-technical audiences.
+        <div class="item-row">
+          <span class="item-label">Music &amp; Sound:</span>
+          <p>Event DJ/MC and assistant sound technician work, plus freelance DJing during tertiary studies; a long-standing interest in live sound and music.</p>
+        </div>
+
+        <div class="item-row">
+          <span class="item-label">Home-Lab &amp; Self-Hosting:</span>
+          <p>Building and maintaining a personal home-lab network (VPS configuration, firewall/routing, DNS/DHCP/VPN) out of curiosity, well beyond what client work requires.</p>
+        </div>
+
+        <div class="item-row">
+          <span class="item-label">AI &amp; LLM Experimentation:</span>
+          <p>Running local models with Ollama and AnythingLLM, and exploring Claude Code, Claude Desktop and the Anthropic API as a personal interest as much as a professional one.</p>
+        </div>
+
+        <div class="item-row">
+          <span class="item-label">Teaching &amp; Mentoring:</span>
+          <p>Freelance tutoring during tertiary studies; enjoys breaking down technical concepts for non-technical audiences.</p>
+        </div>
       </div>
     </section>
 
-    <section aria-labelledby="side-projects-heading">
-      <h2 id="side-projects-heading">Side Projects &amp; Community</h2>
-      <ul>
-        <li>Self-built browser-based quote generator with live preview and PDF export, developed to streamline freelance client quoting.</li>
-        <li>Proposed and executed a YouTube channel and updated user-guide programme at Civilsoft Systems, alongside primary support duties.</li>
-        <li>Building an independent freelance web and SEO consultancy from the ground up — scoping, pricing, delivery and client relationships, solo.</li>
-        <li>Personal knowledge-management practice using Pandoc, Markdown and Obsidian to organise technical learning and documentation.</li>
-        <li>School leadership and community involvement: Prefect, Peer Counsellor, and Head of the Entertainment Portfolio at St Dominic's College.</li>
-      </ul>
+    <section class="section alt" aria-labelledby="side-projects-heading">
+      <div class="wrap">
+        <h2 id="side-projects-heading"><span class="section-number">02</span> Side Projects &amp; Community</h2>
+        <ul>
+          <li>Self-built browser-based quote generator with live preview and PDF export, developed to streamline freelance client quoting.</li>
+          <li>Proposed and executed a YouTube channel and updated user-guide programme at Civilsoft Systems, alongside primary support duties.</li>
+          <li>Building Kouga Digital, an independent technology consultancy, from the ground up: scoping, pricing, delivery and client relationships, solo.</li>
+          <li>Personal knowledge-management practice using Pandoc, Markdown and Obsidian to organise technical learning and documentation.</li>
+          <li>School leadership and community involvement: Prefect, Peer Counsellor, and Head of the Entertainment Portfolio at St Dominic's College.</li>
+        </ul>
+      </div>
     </section>
+  </main>
 
-    <footer class="site-footer">
-      <span class="footer-brand">Michael Herbst</span>
-      <span class="footer-contact">michael.anthony.herbst@gmail.com &middot; +27 64 676 5276</span>
-    </footer>
-  </div>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <span class="footer-brand">MICHAEL HERBST</span>
+        <span class="footer-contact"><a href="mailto:michael.anthony.herbst@gmail.com">michael.anthony.herbst@gmail.com</a> &middot; <a href="tel:+27646765276">+27 64 676 5276</a></span>
+      </div>
+      <p class="footer-note">Curriculum vitae of Michael Herbst &middot; Jeffreys Bay, Eastern Cape, South Africa.</p>
+    </div>
+  </footer>
 </body>
 </html>

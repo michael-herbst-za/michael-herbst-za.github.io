@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skills - Michael Herbst</title>
+  <title>Skills &middot; Michael Herbst</title>
+  <meta name="description" content="Technical skills of Michael Herbst: servers and cloud, databases, scripting and automation, networking, security, AI tooling, front-end web development, design and client support.">
+  <meta name="theme-color" content="#0a7a70">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,73 +13,104 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <div class="container">
-    <a class="back-link" href="index.html">&larr; Back to CV</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="brand-stripe"></div>
-
-    <header class="page-header">
-      <h1>Skills</h1>
-    </header>
-
-    <section aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Technical Skills</h2>
-
-      <div class="skill-row">
-        <span class="skill-label">Servers, Cloud &amp; Virtualisation —</span>
-        Windows Server 2019 administration; VPS provisioning, hardening and maintenance; Hyper-V / WSL2; VirtualBox; hybrid on-prem/cloud environments; cPanel and Softaculous-managed shared hosting; static-site hosting and deployment (Netlify); domain registration and DNS management (NS/A/SOA records, propagation).
+  <header class="site-header">
+    <div class="wrap">
+      <div class="header-inner">
+        <div class="brand">
+          <div>
+            <div class="wordmark">MICHAEL HERBST</div>
+            <div class="descriptor">IT Support &middot; System Administration &middot; Cloud &amp; Web</div>
+          </div>
+        </div>
+        <nav class="nav-row" aria-label="CV sections">
+          <a class="nav-btn" href="index.html">Overview</a>
+          <a class="nav-btn active" href="skills.html" aria-current="page">Skills</a>
+          <a class="nav-btn" href="experience.html">Experience</a>
+          <a class="nav-btn" href="learning.html">Learning</a>
+          <a class="nav-btn" href="interests.html">Interests</a>
+          <a class="nav-btn" href="traits.html">Traits</a>
+        </nav>
       </div>
+    </div>
+  </header>
+  <div class="brand-stripe"></div>
 
-      <div class="skill-row">
-        <span class="skill-label">Databases —</span>
-        SQL Server, MySQL (cloud and local), Microsoft Access; query writing, basic schema design, backup and restore, integrity checks and troubleshooting.
-      </div>
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Curriculum Vitae &middot; Michael Herbst</p>
+      <h1>Skills.</h1>
+      <p class="lede">Ten expanded skill categories, from servers, databases and scripting to AI tooling, front-end development, design and client support.</p>
+    </div>
+  </section>
 
-      <div class="skill-row">
-        <span class="skill-label">Operating Systems —</span>
-        Windows 10 / 11 (including LTSC and IoT LTSC editions); Group Policy; Registry; Windows hardening and debloating; Linux (Ubuntu, Lubuntu).
-      </div>
+  <main id="main">
+    <section class="section" aria-labelledby="skills-heading">
+      <div class="wrap">
+        <h2 id="skills-heading"><span class="section-number">01</span> Technical Skills</h2>
 
-      <div class="skill-row">
-        <span class="skill-label">Scripting &amp; Automation —</span>
-        PowerShell (file organisation, hash-ledger workflows, scheduled tasks); Bash with Pandoc (HTML ↔ Markdown pipelines); Git for Windows; document and compliance workflow tooling.
-      </div>
+        <div class="item-row">
+          <span class="item-label">Servers, Cloud &amp; Virtualisation:</span>
+          <p>Windows Server VPS administration, provisioning, hardening and maintenance; Hyper-V / WSL2; VirtualBox; hybrid on-prem/cloud environments; cPanel and Softaculous-managed shared hosting; domain registration and DNS management.</p>
+        </div>
 
-      <div class="skill-row">
-        <span class="skill-label">Networking &amp; Infrastructure —</span>
-        Home-lab and VPS network configuration; firewall and routing concepts; DNS, DHCP and VPN concepts; structured cabling and endpoint setup; familiarity with IP camera, VoIP and on-site ICT hardware lifecycle.
-      </div>
+        <div class="item-row">
+          <span class="item-label">Databases:</span>
+          <p>SQL Server, MySQL (cloud and local), Microsoft Access; query writing, basic schema design, backup and restore, integrity checks and troubleshooting.</p>
+        </div>
 
-      <div class="skill-row">
-        <span class="skill-label">Information Security &amp; Compliance —</span>
-        POPIA awareness and applied review; firewall and egress control; foundational ethical hacking (TryHackMe progression toward eJPT / PNPT / OSCP).
-      </div>
+        <div class="item-row">
+          <span class="item-label">Operating Systems:</span>
+          <p>Windows 10 / 11 (including LTSC and IoT LTSC editions); Group Policy; Registry; Windows hardening and debloating; Linux (Ubuntu, Lubuntu).</p>
+        </div>
 
-      <div class="skill-row">
-        <span class="skill-label">AI &amp; Emerging Technology —</span>
-        Local LLM deployment with Ollama and AnythingLLM; Claude Code, Claude Desktop and Anthropic API integration; prompt design; Pandoc + Markdown + Obsidian knowledge-management pipelines.
-      </div>
+        <div class="item-row">
+          <span class="item-label">Scripting &amp; Automation:</span>
+          <p>PowerShell (file organisation, hash-ledger workflows, scheduled tasks); Bash with Pandoc (HTML to Markdown pipelines); Git for Windows; document and compliance workflow tooling.</p>
+        </div>
 
-      <div class="skill-row">
-        <span class="skill-label">Front-End Web Development —</span>
-        Semantic HTML5; mobile-first CSS with token-driven design systems (CSS custom properties); accessibility basics (semantic landmarks, ARIA); JSON-LD structured data; Open Graph metadata; local SEO; WordPress and Softaculous deployment.
-      </div>
+        <div class="item-row">
+          <span class="item-label">Networking &amp; Infrastructure:</span>
+          <p>Home-lab and VPS network configuration; firewall and routing concepts; DNS, DHCP and VPN concepts; structured cabling and endpoint setup; familiarity with IP camera, VoIP and on-site ICT hardware lifecycle.</p>
+        </div>
 
-      <div class="skill-row">
-        <span class="skill-label">Design &amp; Media —</span>
-        Adobe Photoshop (intermediate) and wider Adobe Suite; Corel Draw (basic); Techsmith Snagit (advanced); Figma prototyping; technical, educational and marketing design; screen-capture and tutorial video production.
-      </div>
+        <div class="item-row">
+          <span class="item-label">Information Security &amp; Compliance:</span>
+          <p>POPIA awareness and applied review; firewall and egress control; foundational ethical hacking (TryHackMe progression toward eJPT / PNPT / OSCP).</p>
+        </div>
 
-      <div class="skill-row">
-        <span class="skill-label">Client Support &amp; Productivity —</span>
-        Freshdesk ticket management; remote troubleshooting; client onboarding and training; technical documentation and guide authoring; Microsoft 365 administration; Word, Excel, PowerPoint, Project, Visio, Publisher; Sage Pastel Partner / Xpress; Sage Evolution; POS systems.
+        <div class="item-row">
+          <span class="item-label">AI &amp; Emerging Technology:</span>
+          <p>Local LLM deployment with Ollama and AnythingLLM; Claude Code, Claude Desktop and Anthropic API integration; prompt design; Pandoc + Markdown + Obsidian knowledge-management pipelines.</p>
+        </div>
+
+        <div class="item-row">
+          <span class="item-label">Front-End Web Development:</span>
+          <p>Semantic HTML5; mobile-first CSS with token-driven design systems (CSS custom properties); accessibility basics (semantic landmarks, ARIA); JSON-LD structured data; Open Graph metadata; local SEO; WordPress and Softaculous deployment.</p>
+        </div>
+
+        <div class="item-row">
+          <span class="item-label">Design &amp; Media:</span>
+          <p>Graphic design and video editing (Adobe Creative Cloud including Photoshop and Premiere, CorelDRAW, DaVinci Resolve, OBS, Shotcut); TechSmith Snagit Certification (advanced screen capture and tutorial production); Figma prototyping; technical, educational and marketing design.</p>
+        </div>
+
+        <div class="item-row">
+          <span class="item-label">Client Support &amp; Productivity:</span>
+          <p>Freshdesk ticket management; remote troubleshooting; client onboarding and training; technical documentation and guide authoring; Microsoft 365 administration; Word, Excel, PowerPoint, Project, Visio, Publisher; Sage Pastel Partner / Xpress; Sage Evolution; POS systems.</p>
+        </div>
       </div>
     </section>
+  </main>
 
-    <footer class="site-footer">
-      <span class="footer-brand">Michael Herbst</span>
-      <span class="footer-contact">michael.anthony.herbst@gmail.com &middot; +27 64 676 5276</span>
-    </footer>
-  </div>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <span class="footer-brand">MICHAEL HERBST</span>
+        <span class="footer-contact"><a href="mailto:michael.anthony.herbst@gmail.com">michael.anthony.herbst@gmail.com</a> &middot; <a href="tel:+27646765276">+27 64 676 5276</a></span>
+      </div>
+      <p class="footer-note">Curriculum vitae of Michael Herbst &middot; Jeffreys Bay, Eastern Cape, South Africa.</p>
+    </div>
+  </footer>
 </body>
 </html>
