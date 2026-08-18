@@ -4,6 +4,10 @@
    2026-07 revision: tokens, IBM Plex Mono + Sans, web type scale, header
    wordmark + nav, ink hero, kicker, numbered sections, card / callout /
    badge / item-row components, CTA band, ink footer, a11y patterns.
+
+   2026-08 revision: the raw brand palette is now mapped through a semantic
+   token layer (--bg / --surface / --text / --rule / --link ...) so the whole
+   site can honour prefers-color-scheme without duplicating component rules.
    CV-specific extensions are marked in their own blocks.
    ========================================================================== */
 
@@ -11,18 +15,76 @@
    in each page head (faster than an @import here, which blocks CSS parsing). */
 
 :root {
+  /* ---- Raw brand palette (Kouga Digital) --------------------------------- */
   --ink:         #14181c;            /* near-black; primary text and heavy rules */
   --graphite:    #2b333c;            /* secondary text, slightly softer */
   --slate:       #5a6571;            /* muted/tertiary text, metadata, footers */
   --mist:        #f4f6f7;            /* subtle surface tint; card backgrounds, tag fills */
   --ui-bg:       #eef1f3;            /* overall page/app background */
-  --accent:      #0fb5a6;            /* bright teal; hover fills, accents on dark grounds (needs ink text when used as a fill) */
-  --accent-deep: #0a7a70;            /* deep teal; text-safe on light: links, CTAs, labels. WCAG AA 4.5:1 on white/mist/ui-bg */
-  --line:        rgba(20,24,28,.12); /* borders and dividers */
-  --row-tint:    rgba(15,181,166,0.10); /* recommended row tint */
+  --accent:      #0fb5a6;            /* bright teal; hover fills, accents on dark grounds */
+  --accent-deep: #0a7a70;            /* deep teal; text-safe on light. WCAG AA on white/mist/ui-bg */
+
+  /* ---- Semantic layer: light (default) ----------------------------------- */
+  --bg:           var(--ui-bg);       /* page ground */
+  --surface:      #fff;               /* raised surface: header, .section.alt, stat cells */
+  --surface-2:    var(--mist);        /* subtle fill: cards, nav buttons, tags */
+  --text:         var(--graphite);    /* body copy */
+  --text-strong:  var(--ink);         /* headings */
+  --text-muted:   var(--slate);       /* metadata, fine print */
+  --rule:         rgba(20,24,28,.12); /* borders and dividers */
+  --link:         var(--accent-deep); /* text-safe accent on light grounds */
+  --label:        var(--accent-deep); /* item labels, section numbers, card meta */
+
+  /* Inverted grounds (hero, CTA band, footer) stay dark in both schemes. */
+  --invert-bg:      var(--ink);
+  --invert-bg-2:    var(--graphite);
+  --invert-text:    #fff;
+  --invert-text-70: rgba(255,255,255,.85);
+  --invert-text-50: rgba(255,255,255,.55);
+  --invert-rule:    rgba(255,255,255,.35);
+
+  --shadow: none;
 
   --mono: "IBM Plex Mono", ui-monospace, monospace;
   --sans: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+/* ---- Semantic layer: dark ------------------------------------------------
+   Only the semantic tokens are redefined; every component rule below is
+   written against them, so nothing else needs a dark variant. Guarded so an
+   explicit data-theme="light" always wins.
+   ------------------------------------------------------------------------ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:          #0f1418;
+    --surface:     #171d23;
+    --surface-2:   #1c242b;
+    --text:        #c6d0d8;
+    --text-strong: #f2f5f7;
+    --text-muted:  #919da9;
+    --rule:        rgba(255,255,255,.14);
+    --link:        #35d6c5;
+    --label:       #35d6c5;
+    --invert-bg:   #090d10;
+    --invert-bg-2: #131a20;
+    --shadow:      0 1px 2px rgba(0,0,0,.35);
+  }
+}
+
+/* Explicit opt-in, so a theme switch can be added later without a rewrite. */
+:root[data-theme="dark"] {
+  --bg:          #0f1418;
+  --surface:     #171d23;
+  --surface-2:   #1c242b;
+  --text:        #c6d0d8;
+  --text-strong: #f2f5f7;
+  --text-muted:  #919da9;
+  --rule:        rgba(255,255,255,.14);
+  --link:        #35d6c5;
+  --label:       #35d6c5;
+  --invert-bg:   #090d10;
+  --invert-bg-2: #131a20;
+  --shadow:      0 1px 2px rgba(0,0,0,.35);
 }
 
 * { box-sizing: border-box; }
@@ -34,8 +96,8 @@ body {
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.6;
-  color: var(--graphite);
-  background: var(--ui-bg);
+  color: var(--text);
+  background: var(--bg);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -59,7 +121,7 @@ body {
 }
 .skip-link:focus { left: 0; }
 
-a { color: var(--accent-deep); text-decoration: none; }
+a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
@@ -67,7 +129,7 @@ a:hover { text-decoration: underline; }
    Header, wordmark, nav
    ========================================================================== */
 
-.site-header { background: #fff; }
+.site-header { background: var(--surface); }
 
 .header-inner {
   display: flex;
@@ -85,7 +147,7 @@ a:hover { text-decoration: underline; }
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 0.05em;
-  color: var(--ink);
+  color: var(--text-strong);
   line-height: 1.2;
 }
 
@@ -94,7 +156,7 @@ a:hover { text-decoration: underline; }
   font-weight: 400;
   font-size: 9.5px;
   letter-spacing: 0.14em;
-  color: var(--slate);
+  color: var(--text-muted);
   text-transform: uppercase;
   margin-top: 3px;
 }
@@ -107,9 +169,9 @@ a:hover { text-decoration: underline; }
 
 .nav-btn {
   display: inline-block;
-  background: var(--mist);
-  color: var(--accent-deep);
-  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--link);
+  border: 1px solid var(--rule);
   border-radius: 6px;
   padding: 9px 14px;
   font-family: var(--mono);
@@ -125,7 +187,7 @@ a:hover { text-decoration: underline; }
 .nav-btn.active { background: var(--accent-deep); color: #fff; border-color: var(--accent-deep); }
 
 /* Brand stripe: 3px ink bar with 90px teal left segment */
-.brand-stripe { height: 3px; width: 100%; background: var(--ink); position: relative; }
+.brand-stripe { height: 3px; width: 100%; background: var(--invert-bg); position: relative; }
 .brand-stripe::before {
   content: "";
   position: absolute;
@@ -139,14 +201,14 @@ a:hover { text-decoration: underline; }
    ========================================================================== */
 
 .section { padding: 44px 0; }
-.section.alt { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section.alt { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 
 h1 {
   font-family: var(--mono);
   font-weight: 700;
   font-size: clamp(28px, 4.6vw, 40px);
   line-height: 1.2;
-  color: var(--ink);
+  color: var(--text-strong);
   margin: 0 0 14px;
   letter-spacing: -0.01em;
 }
@@ -155,10 +217,10 @@ h2 {
   font-family: var(--mono);
   font-size: 15px;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--text-strong);
   text-transform: uppercase;
   letter-spacing: 0.10em;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--rule);
   padding-bottom: 9px;
   margin: 0 0 20px;
   display: flex;
@@ -167,19 +229,32 @@ h2 {
   flex-wrap: wrap;
 }
 
-.section-number { color: var(--accent-deep); }
+.section-number { color: var(--label); }
 
 h3 {
   font-family: var(--sans);
   font-size: 17px;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--text-strong);
   margin: 0 0 6px;
 }
 
+h4 {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--label);
+  margin: 24px 0 12px;
+}
+
 p { margin: 0 0 14px; }
-.lede { font-size: 18.5px; color: var(--graphite); max-width: 62ch; }
-.fine { font-size: 13px; color: var(--slate); }
+.lede { font-size: 18.5px; color: var(--text); max-width: 62ch; }
+.fine { font-size: 13px; color: var(--text-muted); }
+
+/* Short explanatory line under a section heading */
+.section-intro { max-width: 70ch; color: var(--text-muted); font-size: 15px; margin: -6px 0 20px; }
 
 ul { margin: 6px 0 14px; padding-left: 20px; }
 li { margin-bottom: 7px; }
@@ -191,12 +266,12 @@ li { margin-bottom: 7px; }
    ========================================================================== */
 
 /* Dark ink hero: brings the ink/graphite/slate neutrals forward on every page */
-.hero { background: var(--ink); padding: 56px 0 52px; }
-.hero h1 { color: #fff; }
-.hero .lede { color: rgba(255,255,255,.85); }
+.hero { background: var(--invert-bg); padding: 56px 0 52px; }
+.hero h1 { color: var(--invert-text); }
+.hero .lede { color: var(--invert-text-70); }
 .hero a:not(.btn) { color: var(--accent); }
-.hero .btn-ghost { color: #fff; border-color: rgba(255,255,255,.35); }
-.hero .btn-ghost:hover { background: var(--graphite); color: #fff; border-color: var(--accent); }
+.hero .btn-ghost { color: var(--invert-text); border-color: var(--invert-rule); }
+.hero .btn-ghost:hover { background: var(--invert-bg-2); color: var(--invert-text); border-color: var(--accent); }
 .hero .kicker { color: var(--accent); }
 
 .kicker {
@@ -205,8 +280,19 @@ li { margin-bottom: 7px; }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--accent-deep);
+  color: var(--label);
   margin: 0 0 12px;
+}
+
+/* Mono strap directly under the hero h1: the headline credential in one line */
+.hero-strap {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: -4px 0 16px;
 }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
@@ -227,12 +313,45 @@ li { margin-bottom: 7px; }
 }
 .btn:hover { background: var(--accent); color: var(--ink); border-color: var(--accent); text-decoration: none; }
 
-.btn-ghost { background: transparent; color: var(--accent-deep); border-color: var(--line); }
-.btn-ghost:hover { background: var(--mist); color: var(--accent-deep); border-color: var(--accent); }
+.btn-ghost { background: transparent; color: var(--link); border-color: var(--rule); }
+.btn-ghost:hover { background: var(--surface-2); color: var(--link); border-color: var(--accent); }
 
 /* Prominent contact line under hero and CTA-band action rows */
-.cta-note { margin-top: 16px; font-family: var(--mono); font-size: 13.5px; color: rgba(255,255,255,.82); }
+.cta-note { margin-top: 18px; font-family: var(--mono); font-size: 13px; color: var(--invert-text-70); line-height: 2; }
 .cta-note a { color: var(--accent); font-weight: 600; }
+
+/* ==========================================================================
+   Stat strip (CV extension): headline facts, scannable in one pass
+   ========================================================================== */
+
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.stat { background: var(--surface); padding: 18px 20px; }
+
+.stat-value {
+  display: block;
+  font-family: var(--mono);
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-strong);
+}
+
+.stat-label {
+  display: block;
+  margin-top: 6px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
 
 /* ==========================================================================
    Components carried forward from the document system
@@ -240,23 +359,35 @@ li { margin-bottom: 7px; }
 
 /* Callout / note block */
 .callout {
-  background: var(--mist);
+  background: var(--surface-2);
   border-left: 3px solid var(--accent);
   border-radius: 0 6px 6px 0;
   padding: 13px 16px;
   margin: 0 0 18px;
-  color: var(--graphite);
+  color: var(--text);
 }
 .callout p:last-child { margin-bottom: 0; }
 
+.callout-title {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--label);
+  margin-bottom: 6px;
+}
+
 /* Cards (party-card pattern) */
 .card {
-  background: var(--mist);
-  border: 1px solid var(--line);
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
   border-left: 3px solid var(--accent);
   border-radius: 6px;
   padding: 16px 18px;
   margin-bottom: 14px;
+  box-shadow: var(--shadow);
 }
 .card p:last-child, .card ul:last-child { margin-bottom: 0; }
 
@@ -266,7 +397,7 @@ li { margin-bottom: 7px; }
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--accent-deep);
+  color: var(--label);
   margin-bottom: 6px;
 }
 
@@ -301,8 +432,25 @@ li { margin-bottom: 7px; }
 .item-label {
   font-family: var(--mono);
   font-weight: 600;
-  color: var(--accent-deep);
+  color: var(--label);
   font-size: 14px;
+}
+
+/* Tag chips (CV extension): quick-scan stack summary */
+.tag-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 6px; padding: 0; list-style: none; }
+.tag-list li { margin: 0; }
+
+.tag {
+  display: inline-block;
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text);
 }
 
 /* ==========================================================================
@@ -310,17 +458,18 @@ li { margin-bottom: 7px; }
    ========================================================================== */
 
 .cta-band {
-  background: var(--graphite);
-  color: #fff;
+  background: var(--invert-bg-2);
+  color: var(--invert-text);
   padding: 40px 0;
 }
-.cta-band h2 { color: #fff; border-bottom-color: rgba(255,255,255,.2); }
+.cta-band h2 { color: var(--invert-text); border-bottom-color: rgba(255,255,255,.2); }
 .cta-band .section-number { color: var(--accent); }
-.cta-band p { color: rgba(255,255,255,.82); }
+.cta-band p { color: var(--invert-text-70); }
+.cta-band a:not(.btn) { color: var(--accent); }
 .cta-band .btn { background: var(--accent); color: var(--ink); border-color: var(--accent); }
 .cta-band .btn:hover { background: var(--accent-deep); color: #fff; border-color: var(--accent-deep); }
-.cta-band .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.35); }
-.cta-band .btn-ghost:hover { background: var(--ink); color: #fff; border-color: var(--accent); }
+.cta-band .btn-ghost { background: transparent; color: var(--invert-text); border-color: var(--invert-rule); }
+.cta-band .btn-ghost:hover { background: var(--invert-bg); color: var(--invert-text); border-color: var(--accent); }
 .cta-band .hero-actions { margin-top: 18px; }
 
 /* ==========================================================================
@@ -329,7 +478,7 @@ li { margin-bottom: 7px; }
 
 .site-footer {
   border-top: 3px solid var(--accent);
-  background: var(--ink);
+  background: var(--invert-bg);
   padding: 24px 0 32px;
 }
 
@@ -345,16 +494,29 @@ li { margin-bottom: 7px; }
   font-family: var(--mono);
   font-weight: 700;
   font-size: 13px;
-  color: #fff;
+  color: var(--invert-text);
 }
 
-.footer-contact { font-size: 13px; color: rgba(255,255,255,.72); }
+.footer-contact { font-size: 13px; color: var(--invert-text-70); }
 .footer-contact a { color: var(--accent); }
 
+.footer-nav {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.footer-nav a { color: var(--invert-text-70); }
+.footer-nav a:hover { color: var(--accent); }
+
 .footer-note {
-  margin-top: 12px;
+  margin-top: 14px;
   font-size: 12px;
-  color: rgba(255,255,255,.55);
+  color: var(--invert-text-50);
 }
 
 /* ==========================================================================
@@ -362,11 +524,15 @@ li { margin-bottom: 7px; }
    ========================================================================== */
 
 /* Job cards: employer name after the title, badge alignment */
-.job-employer { color: var(--accent-deep); font-style: italic; font-weight: 400; }
+.job-employer { color: var(--label); font-style: italic; font-weight: 400; }
 .card h3 .badge { margin-left: 8px; position: relative; top: -1px; }
 
 /* Founder descriptor line inside the entity card */
-.entity-line { font-size: 14px; color: var(--slate); margin: 0 0 8px; }
+.entity-line { font-size: 14px; color: var(--text-muted); margin: 0 0 8px; }
+
+/* 404 */
+.error-page { padding: 72px 0; text-align: center; }
+.error-code { font-family: var(--mono); font-size: 64px; font-weight: 700; color: var(--label); line-height: 1; margin: 0 0 10px; }
 
 /* ==========================================================================
    Responsive
@@ -377,6 +543,8 @@ li { margin-bottom: 7px; }
   .brand { flex-direction: column; gap: 8px; }
   .nav-row { justify-content: center; }
   .hero { padding: 40px 0; }
+  .cta-note { line-height: 2.2; }
+  .footer-row { justify-content: flex-start; }
 }
 
 /* Respect users who prefer reduced motion */
@@ -387,19 +555,43 @@ li { margin-bottom: 7px; }
 
 /* ==========================================================================
    Print (CV extension: recruiters print these pages)
+   Tokens are forced back to the light palette so a dark-mode visitor still
+   prints ink on white.
    ========================================================================== */
 
 @media print {
+  /* :root is repeated deliberately. `prefers-color-scheme: dark` still matches
+     while printing in most browsers, and that block's selector
+     `:root:not([data-theme="light"])` has specificity (0,2,0). Repeating :root
+     three times gives (0,3,0) so the light print palette always wins, whatever
+     scheme the visitor is browsing in. */
+  :root:root:root {
+    --bg: #fff;
+    --surface: #fff;
+    --surface-2: #fff;
+    --text: #2b333c;
+    --text-strong: #14181c;
+    --text-muted: #5a6571;
+    --rule: rgba(20,24,28,.25);
+    --link: #0a7a70;
+    --label: #0a7a70;
+    --shadow: none;
+  }
   body { background: #fff; }
-  .skip-link, .nav-row, .hero-actions, .cta-band, .site-footer { display: none; }
+  .skip-link, .nav-row, .hero-actions, .cta-band, .site-footer, .tag-list { display: none; }
   .hero { background: #fff; padding: 10px 0; }
-  .hero h1 { color: var(--ink); }
-  .hero .lede { color: var(--graphite); }
-  .hero .kicker { color: var(--accent-deep); }
-  .cta-note { color: var(--graphite); }
-  .cta-note a { color: var(--accent-deep); }
+  .hero h1 { color: var(--text-strong); }
+  .hero .lede { color: var(--text); }
+  .hero .kicker, .hero-strap { color: var(--label); }
+  .cta-note { color: var(--text); line-height: 1.6; }
+  .cta-note a { color: var(--link); }
   .section { padding: 14px 0; }
   .section.alt { border: none; }
+  .stat-strip { background: none; gap: 0; border-color: var(--rule); }
+  .stat { border-right: 1px solid var(--rule); }
   h2 { page-break-after: avoid; }
-  .card { page-break-inside: avoid; }
+  h3 { page-break-after: avoid; }
+  .card { page-break-inside: avoid; border-left-color: #0a7a70; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 10px; color: var(--text-muted); }
+  a[href^="#"]::after, a[href^="mailto"]::after, a[href^="tel"]::after { content: ""; }
 }
