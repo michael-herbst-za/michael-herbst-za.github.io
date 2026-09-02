@@ -18,17 +18,19 @@ Every page shares the same header (wordmark, descriptor, button navigation with 
 
 ## Content source
 
-Page content is derived from the canonical CV content archive (`CV_Content_Status_Index.md` and its seven companion files), regenerated 17 August 2026 after the CV suite was cut from thirteen variants to five. Where the archive and an individual CV markdown file disagree, **the archive is authoritative** — some CV markdown exports predate the August upgrade and the 17 August contact-line ruling.
+Page content is derived from the canonical job-search content set held outside this repo: `01_LOCKED_FACTS.md` (identity, dates, titles, guardrails) and `02_EVIDENCE_BANK.md` (claim scope and reusable evidence), cross-checked against the active six-variant CV suite (`Michael_Herbst_Active_CV_Suite_Index.md` and its Markdown baselines). Site content was last reconciled against that set on 3 September 2026. Where the locked-facts/evidence files and a CV markdown export disagree, **the locked-facts and evidence files are authoritative** — a CV markdown file does not itself prove a claim merely by repeating it.
 
 Rules the site content must keep to:
 
-- Employment title is exactly `Client Support Administrator`, with no parenthetical appended.
+- Employment title is exactly `Client Support Administrator`, with no parenthetical appended in the job-title line (the "sole IT operations and infrastructure resource" framing is stated in the bullets below it instead).
 - No vehicle, own-transport or reliable-transport claim anywhere. The Code 08 licence and the Jeffreys Bay base may be stated.
 - "Discontinued" against the B.Com. Law entry carries no reason, anywhere.
 - "Self-taught" appears in the learning material only, never in a skills row or summary.
 - Beginner and actively-learning languages live on `learning.html`, never in a skills row.
-- Civilsoft dates are presented year-only (2019 – 2026) per the 14 August 2026 ruling.
+- Civilsoft dates are presented as `December 2019 – May 2026` per the 30 August 2026 locked-facts ruling, which supersedes the earlier 14 August 2026 year-only rule. The `6 yrs 5 mo` / "six years and five months" framing continues alongside it.
 - No reason is volunteered for any role ending.
+- The Civilsoft video-training/user-guide programme is described as **proposed and approved**, never as "launched" or a "channel" — source records conflict on whether it went live, so the site uses the same safe wording as the CV suite until that is confirmed.
+- Kouga Digital's Google Workspace Business administration (configured and solely administered by Michael, including ongoing maintenance) is current production experience and appears alongside the Microsoft 365 material on the overview, skills, experience and learning pages. It is stated as a single environment only — never plural Workspace tenants, external-client administration, or feature-specific delivery (Vault, migrations, Gmail routing, Shared Drives, organisational units are familiarity-only, not administered claims).
 
 ## Design system
 
