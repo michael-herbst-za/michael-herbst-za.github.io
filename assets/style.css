@@ -296,6 +296,8 @@ li { margin-bottom: 7px; }
 }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.hero-actions--center { justify-content: center; }
+.not-found-lede { margin: 0 auto; }
 
 .btn {
   display: inline-block;

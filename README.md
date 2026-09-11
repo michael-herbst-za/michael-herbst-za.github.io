@@ -46,7 +46,12 @@ Tokens and components live in `assets/style.css`; CV-specific extensions (job ca
 
 ## SEO and metadata
 
-Each page carries a canonical URL, Open Graph and Twitter card metadata, and a unique description. `index.html` carries a JSON-LD `Person` graph including `worksFor`, `alumniOf` and `knowsAbout`. `sitemap.xml` and `robots.txt` are at the root.
+Each page carries a canonical URL, Open Graph and Twitter card metadata, and a unique description. `index.html` carries a JSON-LD `Person` graph including `worksFor`, `alumniOf` and `knowsAbout`. `sitemap.xml`, `robots.txt` and `site.webmanifest` are at the root.
+
+GitHub Pages does not expose a repository-level response-header file, so each
+HTML page carries a restrictive Content Security Policy in a `<meta>` element.
+The policy allows the current JSON-LD block by SHA-256 hash. Recalculate that
+hash if the structured data in `index.html` changes.
 
 The social preview image is `assets/og.png` (1200×630), referenced from every page as `og:image` / `twitter:image` with `twitter:card` set to `summary_large_image`. It is generated from `assets/og-source.html` — edit that file and re-render with headless Chrome or Edge:
 
