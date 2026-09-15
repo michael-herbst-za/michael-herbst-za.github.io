@@ -6,31 +6,39 @@ A multi-page HTML CV hosted on GitHub Pages. No build step, no JavaScript; share
 
 ## Pages
 
-- `index.html`: Full one-page CV — hero summary, at-a-glance stat strip, nine core skill rows, experience, learning, education, languages, contact band.
-- `skills.html`: Full skills inventory across seven groups (core stack, infrastructure, security, service delivery, business and leadership, web/AI/design, soft skills).
-- `experience.html`: Full professional history — current practice, the Civilsoft Systems record including public-sector tendering, earlier professional roles, and earlier roles 2014–2018.
-- `learning.html`: Certifications and learning, split into in progress, applied and complete, how I learn, and planned.
+- `index.html`: Broad public CV, aligned to the active Default baseline, with summary, evidence strip, eight core capability rows, experience, learning, education, languages and contact details.
+- `skills.html`: Role-focused inventory across infrastructure and identity, application support and data, service delivery, security, commercial operations, web and demonstrated working style.
+- `experience.html`: Full professional history, including Kouga Digital, the Civilsoft Systems technical, application-support, account and public-sector record, and earlier roles from 2014.
+- `learning.html`: Current study, held credential, applied practice and the evidence-based learning approach.
 - `interests.html`: Personal interests and side projects.
 - `traits.html`: Capability statements, working style with evidence, and the recurring themes.
 - `404.html`: Not-found page (GitHub Pages serves this automatically).
+- `documents/Michael_Herbst_CV.pdf`: Verified two-page standing public CV built from the active Default Markdown baseline.
 
 Every page shares the same header (wordmark, descriptor, button navigation with an active state) and the same footer with secondary navigation.
 
 ## Content source
 
-Page content is derived from the canonical job-search content set held outside this repo: `01_LOCKED_FACTS.md` (identity, dates, titles, guardrails) and `02_EVIDENCE_BANK.md` (claim scope and reusable evidence), cross-checked against the active six-variant CV suite (`Michael_Herbst_Active_CV_Suite_Index.md` and its Markdown baselines). Site content was last reconciled against that set on 3 September 2026. Where the locked-facts/evidence files and a CV markdown export disagree, **the locked-facts and evidence files are authoritative** — a CV markdown file does not itself prove a claim merely by repeating it.
+Page content is derived from the private canonical job-search content set held outside the published site: `01_LOCKED_FACTS.md` (identity, dates, titles and guardrails) and `02_EVIDENCE_BANK.md` (claim scope and reusable evidence), cross-checked against the active six-variant CV suite and its standing public copy. Site content was last reconciled against the final 15 September 2026 suite. Where the locked-facts/evidence files and a CV Markdown export disagree, **the locked-facts and evidence files are authoritative**. A CV file does not prove a claim merely by repeating it.
 
 Rules the site content must keep to:
 
-- Employment title is exactly `Client Support Administrator`, with no parenthetical appended in the job-title line (the "sole IT operations and infrastructure resource" framing is stated in the bullets below it instead).
+- Civilsoft's official title is `Client Support Administrator`; the approved descriptive qualifier is `sole IT operations and infrastructure resource`.
 - No vehicle, own-transport or reliable-transport claim anywhere. The Code 08 licence and the Jeffreys Bay base may be stated.
 - "Discontinued" against the B.Com. Law entry carries no reason, anywhere.
-- "Self-taught" appears in the learning material only, never in a skills row or summary.
-- Beginner and actively-learning languages live on `learning.html`, never in a skills row.
-- Civilsoft dates are presented as `December 2019 – May 2026` per the 30 August 2026 locked-facts ruling, which supersedes the earlier 14 August 2026 year-only rule. The `6 yrs 5 mo` / "six years and five months" framing continues alongside it.
+- Civilsoft dates are presented as `December 2019–May 2026`; earlier roles use year-only dates where exact months remain unresolved.
+- Civilsoft reach is `270+ South African offices, with clients in Namibia, Botswana, Eswatini, Ireland and Australia`.
+- Support volume is an estimated `10 to 30 support requests a day`, never an average, derived total, Freshdesk-ticket count or SLA metric.
+- `At least 15 public bodies` is an organisation count, not a bid, award or contract count. No win-rate or universal no-loss claim is used.
+- The four published account-scale examples remain distinct. The approximately 300-user consultancy is never merged with the separate 10-branch consultancy.
+- Private Civilsoft client names and the two product names are not published. Public bodies may be named.
+- Database work is framed as application database support and SQL report development, not software development or enterprise database engineering. SSRS and Crystal Reports are never claimed.
 - No reason is volunteered for any role ending.
-- The Civilsoft video-training/user-guide programme is described as **proposed and approved**, never as "launched" or a "channel" — source records conflict on whether it went live, so the site uses the same safe wording as the CV suite until that is confirmed.
-- Kouga Digital's Google Workspace Business administration (configured and solely administered by Michael, including ongoing maintenance) is current production experience and appears alongside the Microsoft 365 material on the overview, skills, experience and learning pages. It is stated as a single environment only — never plural Workspace tenants, external-client administration, or feature-specific delivery (Vault, migrations, Gmail routing, Shared Drives, organisational units are familiarity-only, not administered claims).
+- The Civilsoft video-training/user-guide programme is described as proposed and approved, never as launched or as a channel.
+- Kouga Digital's Google Workspace Business administration is stated as one configured, maintained and solely administered environment. Vault, migrations, Gmail routing, Shared Drives and organisational-unit management remain familiarity-level items.
+- CompTIA Security+, eJPT, PNPT and OSCP remain in progress or in practical study. TechSmith Snagit is the only completed certification named.
+- Civilsoft-attributed CAINE, hash-ledger, TryHackMe or named AI-tooling examples are not used without separate employer or project evidence.
+- Public pages use the professional email as the default and do not expose the private address or other sensitive information.
 
 ## Design system
 
@@ -53,7 +61,7 @@ HTML page carries a restrictive Content Security Policy in a `<meta>` element.
 The policy allows the current JSON-LD block by SHA-256 hash. Recalculate that
 hash if the structured data in `index.html` changes.
 
-The social preview image is `assets/og.png` (1200×630), referenced from every page as `og:image` / `twitter:image` with `twitter:card` set to `summary_large_image`. It is generated from `assets/og-source.html` — edit that file and re-render with headless Chrome or Edge:
+The social preview image is `assets/og.png` (1200×630), referenced from every page as `og:image` / `twitter:image` with `twitter:card` set to `summary_large_image`. It is generated from `assets/og-source.html`; edit that file and re-render with headless Chrome or Edge:
 
 ```bash
 msedge --headless=new --disable-gpu --hide-scrollbars --window-size=1200,630 --screenshot=assets/og.png --virtual-time-budget=8000 assets/og-source.html
