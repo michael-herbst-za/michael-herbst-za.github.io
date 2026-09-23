@@ -19,17 +19,18 @@ Every page shares the same header (wordmark, descriptor, button navigation with 
 
 ## Content source
 
-Page content is derived from the private canonical job-search content set held outside the published site: `01_LOCKED_FACTS.md` (identity, dates, titles and guardrails) and `02_EVIDENCE_BANK.md` (claim scope and reusable evidence), cross-checked against the active six-variant CV suite and its standing public copy. Site content was last reconciled against the final 15 September 2026 suite. Where the locked-facts/evidence files and a CV Markdown export disagree, **the locked-facts and evidence files are authoritative**. A CV file does not prove a claim merely by repeating it.
+Page content is derived from the private canonical job-search content set held outside the published site: `01_LOCKED_FACTS.md` (identity, dates, titles and guardrails) and `02_EVIDENCE_BANK.md` (claim scope and reusable evidence), cross-checked against the active six-variant CV suite and its standing public copy. Site content was last reconciled against the final 23 September 2026 suite. Where the locked-facts/evidence files and a CV Markdown export disagree, **the locked-facts and evidence files are authoritative**. A CV file does not prove a claim merely by repeating it.
 
 Rules the site content must keep to:
 
 - Civilsoft's official title is `Client Support Administrator`; the approved descriptive qualifier is `sole IT operations and infrastructure resource`.
 - No vehicle, own-transport or reliable-transport claim anywhere. The Code 08 licence and the Jeffreys Bay base may be stated.
-- "Discontinued" against the B.Com. Law entry carries no reason, anywhere.
+- University studies read `Studies toward B.Eng. Computer Engineering and B.Com. Law (2015–2017), not completed`, with no reason given, anywhere.
 - Civilsoft dates are presented as `December 2019–May 2026`; earlier roles use year-only dates where exact months remain unresolved.
 - Civilsoft reach is `270+ South African offices, with clients in Namibia, Botswana, Eswatini, Ireland and Australia`.
 - Support volume is an estimated `10 to 30 support requests a day`, never an average, derived total, Freshdesk-ticket count or SLA metric.
 - `At least 15 public bodies` is an organisation count, not a bid, award or contract count. No win-rate or universal no-loss claim is used.
+- Bid documentation reads `MBD, SBD, CSD and PPPFA` (SBD confirmed 21 September 2026).
 - The four published account-scale examples remain distinct. The approximately 300-user consultancy is never merged with the separate 10-branch consultancy.
 - Private Civilsoft client names and the two product names are not published. Public bodies may be named.
 - Database work is framed as application database support and SQL report development, not software development or enterprise database engineering. SSRS and Crystal Reports are never claimed.
